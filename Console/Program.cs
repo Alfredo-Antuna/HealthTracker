@@ -11,12 +11,13 @@ namespace myConsole
             
             while(consoleControl){
                 Console.WriteLine("\n\n");
-                Sql.showHealth();
                 Console.WriteLine(@"
                                     
                                     Input 0 to Add a Day option 
                                     Input 1 to Pick a day to Update 
                                     Input 2 to Pick a day to Delete
+                                    Input 3 to Show Log ordered by Calories
+                                    Input 4 to Show Log ordered by Date
                                     Press Enter to Quit");
 
 
@@ -26,7 +27,7 @@ namespace myConsole
                 {
                     case "0":
                         Console.WriteLine(@"Date format YYYY-MM-DD
-                                            Input : Date,BMI,Weight,Calories");
+                                            Input : Date,Weight,BMI,Calories");
                         var input = Console.ReadLine();
                         var info = input.Split(",");
                         Sql.addDay(info[0],Convert.ToDecimal(info[1]),Convert.ToDecimal(info[2]),Convert.ToInt32(info[3]));
@@ -43,6 +44,12 @@ namespace myConsole
                                             Input : Date");
                         var info2 = Console.ReadLine();
                         Sql.removeDay(info2);
+                        break;
+                    case "3":
+                        Sql.showHealthByCalories();
+                        break;
+                    case "4":
+                        Sql.showHealth();
                         break;
                     case "":
                         consoleControl = false;
