@@ -10,6 +10,7 @@ namespace myConsole
             var consoleControl = true;
             
             while(consoleControl){
+                Console.WriteLine("\n\n");
                 Sql.showHealth();
                 Console.WriteLine(@"
                                     
@@ -44,6 +45,7 @@ namespace myConsole
                         Sql.removeDay(info2);
                         break;
                     case "":
+                        consoleControl = false;
                         break;
 
                 }

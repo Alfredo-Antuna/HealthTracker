@@ -73,6 +73,8 @@ namespace Library
                 FROM healthInfo
             ";
             using var reader = command.ExecuteReader();
+            Console.WriteLine(@"LOG:DATE - Weight - BMI - CALORIES");
+                Console.WriteLine("___________________________");
             while(reader.Read())
             {
                 {
@@ -81,7 +83,7 @@ namespace Library
                 var bmi = reader.GetDecimal(2);
                 var calories = reader.GetInt32(3);
 
-
+                
                 Console.WriteLine($"Row: {date} - {weight} - {bmi} - {calories}");
             }
             }
