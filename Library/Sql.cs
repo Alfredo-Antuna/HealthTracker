@@ -33,12 +33,12 @@ namespace Library
             command.CommandText =
             @"
                 UPDATE healthInfo
-                SET  weight = $weight, bmi = $bmi, calories = $calories)
-                WHERE date = $date
+                SET  weight = $weight, bmi = $bmi, calories = $calories
+                WHERE date = $day;
                
             ";
             //YYYY-MM-DD
-            command.Parameters.AddWithValue("$date",day);
+            command.Parameters.AddWithValue("$day",day);
             command.Parameters.AddWithValue("$weight",weight);
             command.Parameters.AddWithValue("$bmi",bmi);
             command.Parameters.AddWithValue("$calories",calories);

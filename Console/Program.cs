@@ -1,6 +1,6 @@
 ﻿using System;
 using Library;
-namespace Console
+namespace myConsole
 {
     class Program
     {
@@ -26,22 +26,22 @@ namespace Console
                     case "0":
                         Console.WriteLine(@"Date format YYYY-MM-DD
                                             Input : Date,BMI,Weight,Calories");
-                        var info = Console.ReadLine();
-                        info = info.split(",");
+                        var input = Console.ReadLine();
+                        var info = input.Split(",");
                         Sql.addDay(info[0],Convert.ToDecimal(info[1]),Convert.ToDecimal(info[2]),Convert.ToInt32(info[3]));
                         break;
                     case "1":
                     Console.WriteLine(@"Date format YYYY-MM-DD
                                             Input : Date,Weight,BMI,Calories");
-                        var info = Console.ReadLine();
-                        info = info.split(",");
-                        Sql.updateDay(info[0],Convert.ToDecimal(info[1]),Convert.ToDecimal(info[2]),Convert.ToInt32(info[3]));
+                        var input1 = Console.ReadLine();
+                        var info1 = input1.Split(",");
+                        Sql.updateDay(info1[0],Convert.ToDecimal(info1[1]),Convert.ToDecimal(info1[2]),Convert.ToInt32(info1[3]));
                         break;
                     case "2":
                         Console.WriteLine(@"Date format YYYY-MM-DD
                                             Input : Date");
-                        var info = Console.ReadLine();
-                        Sql.removeDay(info);
+                        var info2 = Console.ReadLine();
+                        Sql.removeDay(info2);
                         break;
                     case "":
                         break;
